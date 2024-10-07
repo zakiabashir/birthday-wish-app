@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import { FaBirthdayCake, FaGift } from 'react-icons/fa'
 import { GiBalloons } from 'react-icons/gi'
-
+import Image from 'next/image'
 // Define type for Confetti component props
 type ConfettiProps = {
   width: number
@@ -82,6 +82,15 @@ export default function BirthdayWish() {
   return (
     // Main container
     <div className="min-h-screen bg-white flex items-center justify-center p-4 bg-gradient-to-r from-blue-100  to-red-100">
+      
+      <Image
+        src={require("../../public/bg.jpg")}
+        layout="fill"
+        objectFit="cover"
+        alt="Background Image"
+    
+      />
+   
       {/* Animated wrapper for the card */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
@@ -90,7 +99,7 @@ export default function BirthdayWish() {
         className="w-full max-w-md"
       >
         {/* Birthday card */}
-        <Card className="mx-auto overflow-hidden transition-all duration-300 ease-in-out hover:shadow-x4 border-2 border-black bg-gradient-to-r from-yellow-500  to-pink-500">
+        <Card className="mx-auto overflow-hidden transition-all duration-300 ease-in-out hover:shadow-x4 border-2 border-black bg-gradient-to-r from-yellow-500  to-pink-500 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
           {/* Card header with birthday message */}
           <CardHeader className="text-center">
             <CardTitle className="text-4xl font-bold text-black">Happy Birthday!</CardTitle>
