@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic'
 import { FaBirthdayCake, FaGift } from 'react-icons/fa'
 import { GiBalloons } from 'react-icons/gi'
 import Image from 'next/image'
+import bgImage from '../../public/bg.jpg'; // Import the image at the top
 // Define type for Confetti component props
 type ConfettiProps = {
   width: number
@@ -84,12 +85,11 @@ export default function BirthdayWish() {
     <div className="min-h-screen bg-white flex items-center justify-center p-4 bg-gradient-to-r from-blue-100  to-red-100">
       
       <Image
-        src={require("../../public/bg.jpg")}
-        layout="fill"
-        objectFit="cover"
-        alt="Background Image"
-    
-      />
+  src={bgImage}
+  layout="fill"
+  objectFit="cover"
+  alt="Background Image"
+/>
    
       {/* Animated wrapper for the card */}
       <motion.div
